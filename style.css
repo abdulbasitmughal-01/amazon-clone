@@ -4,12 +4,15 @@
     border: border-box;
 }
 .navbar{
-    height: 60px;
+    min-height: 60px;
     background-color: #0F1111;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     color: white;
     justify-content: space-evenly;
+    row-gap: 8px;
+    padding: 8px 0;
 }
 .navlogo{
     width: 114px;
@@ -44,6 +47,8 @@
 }
 .nav-search{
     width: 600px;
+    max-width: 90%;
+    flex: 1 1 300px;
     display: flex;
     justify-content: space-evenly;
      height: 40px;
@@ -97,12 +102,14 @@ span{
 
 /* panel */
 .panel{
-    height: 40px;
+    min-height: 40px;
     background-color: #222f3d;
     display: flex;
+    flex-wrap: wrap;
     color: white;
     align-items: center;
     justify-content: space-evenly;
+    padding: 6px 0;
 }
 .panel-other p{
     display: inline;
@@ -234,4 +241,104 @@ ul a{
      padding-top: 5px;
     font-size: 0.7rem;
     text-align: center;
+}
+
+/* =========================
+   RESPONSIVE MEDIA QUERIES
+   ========================= */
+
+/* Tablets and small laptops */
+@media (max-width: 992px) {
+    .box{
+        width: 45%;
+    }
+    .foot-panel2{
+        flex-wrap: wrap;
+        height: auto;
+        padding: 20px 0;
+    }
+    .foot-panel2 ul{
+        width: 45%;
+    }
+}
+
+/* Tablets / large phones */
+@media (max-width: 768px) {
+    .navbar{
+        justify-content: center;
+        text-align: center;
+    }
+    .nav-location, .nav-signin{
+        display: none;
+    }
+    .nav-search{
+        order: 3;
+        width: 95%;
+    }
+    .panel-other p{
+        margin-left: 8px;
+        font-size: 0.8rem;
+    }
+    .panel-last{
+        display: none;
+    }
+    .hero-message{
+        width: 95%;
+        font-size: 0.75rem;
+        text-align: center;
+        height: auto;
+        padding: 8px;
+    }
+    .box{
+        width: 47%;
+        height: auto;
+        padding-bottom: 15px;
+    }
+    .box-image{
+        height: 200px;
+    }
+}
+
+/* Mobile phones */
+@media (max-width: 500px) {
+    .logo{
+        width: 90px;
+        height: 40px;
+    }
+    .nav-cart{
+        font-size: 0.75rem;
+    }
+    .nav-cart i{
+        font-size: 22px;
+    }
+    .search-select{
+        display: none;
+    }
+    .panel-other{
+        width: 100%;
+        text-align: center;
+    }
+    .panel-other p{
+        display: inline-block;
+        margin: 2px 6px;
+    }
+    .box{
+        width: 100%;
+    }
+    .box-image{
+        height: 220px;
+    }
+    .foot-panel2{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .foot-panel2 ul{
+        width: 100%;
+        margin-top: 10px;
+    }
+    .foot-panel4{
+        height: auto;
+        padding: 10px 0;
+    }
 }
